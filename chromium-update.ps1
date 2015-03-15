@@ -33,9 +33,11 @@ else {
 	$ood = 1
 }
 
+$fname = "chrome-win32.zip"
+
 if ($ood) {
 	write-output "Downloading remote version..."
-	$client.downloadfile($url + "/" + $remote + "/mini_installer.exe", "$chrdir\mini_installer.exe")
+	$client.downloadfile($url + "/" + $remote + "/$fname", "$chrdir\$fname")
 	write-output "Installing new version..."
 	& $chrdir\mini_installer.exe
 	write-output "Updating local version cache..."
